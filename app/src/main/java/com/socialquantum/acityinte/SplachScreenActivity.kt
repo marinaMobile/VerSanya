@@ -25,9 +25,10 @@ class SplachScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splach_screen)
-        deepL(this)
 
+        val help = Helper()
 
+//        help.deepL(this)
 
         val prefs = getSharedPreferences("ActivityPREF", MODE_PRIVATE)
         if (prefs.getBoolean("activity_exec", false)) {
@@ -46,6 +47,8 @@ class SplachScreenActivity : AppCompatActivity() {
             val exec = prefs.edit()
             exec.putBoolean("activity_exec", true)
             exec.apply()
+
+            help.deepL(this)
 
 
             mCompositeDisposable = CompositeDisposable()
@@ -82,14 +85,5 @@ class SplachScreenActivity : AppCompatActivity() {
         finish()
     }
 
-    fun deepL(context: Context) {
-        AppLinkData.fetchDeferredAppLinkData(
-            context
-        ) {
-            // Process app link
-            val deepData = it!!.targetUri?.host.toString()
-            Toast.makeText(this, deepData, Toast.LENGTH_SHORT).show()
-            pampam["FBData"] = deepData
-        }
-    }
+
 }

@@ -51,9 +51,9 @@ class FilerMeNow : AppCompatActivity() {
         val sub4 = "sub_id_4="
         val sub5 = "sub_id_5="
         val nam = "naming"
-        val depp = "deeporg"
-
-
+        val depp = "orgdeep"
+        val org = "organika"
+        val deep = "deep"
 
         var link = ""
 
@@ -68,11 +68,9 @@ class FilerMeNow : AppCompatActivity() {
                     Toast.makeText(this, "Naming", Toast.LENGTH_LONG).show()
                     startActivity(Intent(this, InfiActivity::class.java))
                     finish()
-
-
                 } else if (depData != null || geoHost!!.contains(geo.toString())) {
                     link =
-                        "$view$sub1$depData&$sub3$afId&$sub2$gaid&$sub4$buildVers&$sub5$nam"
+                        "$view$sub1$depData&$sub3$afId&$sub2$gaid&$sub4$buildVers&$sub5$depp"
                     shP.edit().putString("link", link).apply()
                     shP.edit().putString("ENTRY_CODE", "web").apply()
                     Toast.makeText(this, "DeepOrg", Toast.LENGTH_SHORT).show()
@@ -85,7 +83,7 @@ class FilerMeNow : AppCompatActivity() {
             "0" ->
                 if (depData != null) {
                     link =
-                        "$view$sub1$depData&$sub3$instID&$sub2$gaid&$sub4$buildVers&$sub5$depp"
+                        "$view$sub1$depData&$sub3$instID&$sub2$gaid&$sub4$buildVers&$sub5$deep"
                     shP.edit().putString("link", link).apply()
                     shP.edit().putString("ENTRY_CODE", "web").apply()
                     startActivity(Intent(this, InfiActivity::class.java))
@@ -93,7 +91,7 @@ class FilerMeNow : AppCompatActivity() {
 
                     Toast.makeText(this, "Null FB", Toast.LENGTH_LONG).show()
                 } else if (geoHost!!.contains(geo.toString())) {
-                    link = "$view$sub3$instID&$sub2$gaid&$sub4$buildVers&$sub5$nam"
+                    link = "$view$sub3$instID&$sub2$gaid&$sub4$buildVers&$sub5$org"
                     shP.edit().putString("link", link).apply()
                     shP.edit().putString("ENTRY_CODE", "web").apply()
                     Toast.makeText(this, "Null MT", Toast.LENGTH_LONG).show()
