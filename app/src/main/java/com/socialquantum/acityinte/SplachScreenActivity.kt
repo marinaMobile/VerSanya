@@ -28,18 +28,15 @@ class SplachScreenActivity : AppCompatActivity() {
 
         val help = Helper()
 
-//        help.deepL(this)
 
         val prefs = getSharedPreferences("ActivityPREF", MODE_PRIVATE)
         if (prefs.getBoolean("activity_exec", false)) {
             val prefsInception = getSharedPreferences("NEWPR", Context.MODE_PRIVATE)
             val entryCode =  prefsInception.getString("ENTRY_CODE", "0")
             if (entryCode == "web"){
-                Toast.makeText(this, "HUILA", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, InfiActivity::class.java))
                 finish()
             } else {
-                Toast.makeText(this, "PIZDARULU", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, GamefiAct::class.java))
                 finish()
             }
@@ -80,7 +77,6 @@ class SplachScreenActivity : AppCompatActivity() {
         pampam["AppsCh"] = response.appsChecker
         pampam["GeoHose"] = response.geo
         pampam["View"] = response.view
-        Toast.makeText(this, "${pampam["AppsCh"]},${pampam["GeoHose"]},${pampam["View"]}", Toast.LENGTH_SHORT).show()
         startActivity(Intent(this, SecondActivity::class.java))
         finish()
     }

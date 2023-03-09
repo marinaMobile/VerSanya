@@ -207,7 +207,6 @@ class InfiActivity : AppCompatActivity() {
 
     private fun urururururururur(): String {
 
-//        val spoon = getSharedPreferences("SP_WEBVIEW_PREFS", MODE_PRIVATE)
 
         val sharPre = getSharedPreferences("NEWPR",
             Context.MODE_PRIVATE)
@@ -217,7 +216,6 @@ class InfiActivity : AppCompatActivity() {
 
         return link.toString()
 
-//        return spoon.getString("SAVED_URL", link).toString()
     }
 }
 

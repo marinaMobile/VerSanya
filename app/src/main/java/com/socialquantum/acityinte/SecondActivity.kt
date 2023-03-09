@@ -47,7 +47,6 @@ class SecondActivity : AppCompatActivity() {
 
     private fun onResponse(response: Helper.RetroA) {
         MamaClass.pampam.put("GEO", response.countryCode)
-        Toast.makeText(this, MamaClass.pampam["GEO"], Toast.LENGTH_SHORT).show()
         startActivity(Intent(this,MainActivity::class.java))
     }
 

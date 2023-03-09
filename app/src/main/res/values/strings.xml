@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">Forest Festival</string>
-<!--    <string name="facebook_app_id">3061083584036911</string>-->
-    <string name="facebook_app_id">751204343018734</string>
-<!--    <string name="fb_login_protocol_scheme">fb3061083584036911</string>-->
-    <string name="fb_login_protocol_scheme">fb751204343018734</string>
-<!--    <string name="facebook_client_token">464fd18e9a9a05c94ad50329e04acd19</string>-->
-    <string name="facebook_client_token">c8f857a45dd705ebbb4eae15c0f94d0c</string>
+    <string name="facebook_app_id">3061083584036911</string>
+    <string name="fb_login_protocol_scheme">fb3061083584036911</string>
+    <string name="facebook_client_token">464fd18e9a9a05c94ad50329e04acd19</string>
 </resources>

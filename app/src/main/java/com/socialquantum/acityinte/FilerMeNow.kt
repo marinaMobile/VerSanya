@@ -62,10 +62,8 @@ class FilerMeNow : AppCompatActivity() {
                 if (appsData != "null") {
                     link =
                         "$view$sub1$appsData&$sub3$afId&$sub2$gaid&$sub4$buildVers&$sub5$nam"
-
                     shP.edit().putString("link", link).apply()
                     shP.edit().putString("ENTRY_CODE", "web").apply()
-                    Toast.makeText(this, "Naming", Toast.LENGTH_LONG).show()
                     startActivity(Intent(this, InfiActivity::class.java))
                     finish()
                 } else if (depData != null || geoHost!!.contains(geo.toString())) {
@@ -73,7 +71,6 @@ class FilerMeNow : AppCompatActivity() {
                         "$view$sub1$depData&$sub3$afId&$sub2$gaid&$sub4$buildVers&$sub5$depp"
                     shP.edit().putString("link", link).apply()
                     shP.edit().putString("ENTRY_CODE", "web").apply()
-                    Toast.makeText(this, "DeepOrg", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, InfiActivity::class.java))
                     finish()
                 } else {
@@ -94,11 +91,9 @@ class FilerMeNow : AppCompatActivity() {
                     link = "$view$sub3$instID&$sub2$gaid&$sub4$buildVers&$sub5$org"
                     shP.edit().putString("link", link).apply()
                     shP.edit().putString("ENTRY_CODE", "web").apply()
-                    Toast.makeText(this, "Null MT", Toast.LENGTH_LONG).show()
                     startActivity(Intent(this, InfiActivity::class.java))
                     finish()
                 } else {
-                    Toast.makeText(this, "Go to game", Toast.LENGTH_LONG).show()
                     startActivity(Intent(this, GamefiAct::class.java))
                     finish()
                 }
@@ -106,7 +101,6 @@ class FilerMeNow : AppCompatActivity() {
     }
 
     fun pushToOS(id: String) {
-        Toast.makeText(this, "PushExpressed", Toast.LENGTH_SHORT).show()
         OneSignal.setExternalUserId(
             id,
             object : OneSignal.OSExternalUserIdUpdateCompletionHandler {
