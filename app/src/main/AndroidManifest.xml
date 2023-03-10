@@ -28,9 +28,7 @@
             android:exported="false" />
         <activity
             android:name=".GamefiActGameOver"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat"
-            />
+            android:exported="false" />
         <activity
             android:name=".FilerMeNow"
             android:exported="false" />
@@ -61,7 +59,8 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />

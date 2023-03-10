@@ -10,28 +10,28 @@ class GamefiActGameOver : AppCompatActivity() {
 
     private lateinit var binding: ActivityGamefiGameOverBinding
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = ActivityGamefiGameOverBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         showScore()
         setListeners()
     }
 
     private fun setListeners() {
         binding.btnRestart.setOnClickListener {
-            startActivity(Intent(this, GamefiAct::class.java))
+            val intent = Intent(this, GamefiAct::class.java)
+            startActivity(intent)
             finish()
         }
     }
 
     private fun showScore() {
         binding.tvGameOver.text =
-            getString(R.string.game_over).format(intent.getStringExtra(SCORE_KEY))
+            getString(R.string.game_over).format(intent.getStringExtra(SCORE_KEY).toString())
     }
 
     companion object {
-        const val SCORE_KEY = "score"
+        const val SCORE_KEY = "SCORE"
     }
 }

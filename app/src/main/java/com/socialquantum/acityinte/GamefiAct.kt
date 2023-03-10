@@ -7,6 +7,9 @@ import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.socialquantum.acityinte.databinding.ActivityGamefiBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class GamefiAct : AppCompatActivity() {
 
@@ -92,10 +95,12 @@ class GamefiAct : AppCompatActivity() {
     }
 
     private fun changeActivityToGameOver() {
-        val intent = Intent(this, GamefiActGameOver::class.java)
-        intent.putExtra(SCORE_KEY, viewModel.scoreSubject.value)
-        startActivity(intent)
-        finish()
+        CoroutineScope(Dispatchers.Main).launch {
+            val intent = Intent(this@GamefiAct, GamefiActGameOver::class.java)
+            intent.putExtra(SCORE_KEY, viewModel.scoreSubject.value.toString())
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun randomizeField() {
@@ -119,6 +124,6 @@ class GamefiAct : AppCompatActivity() {
 
     companion object {
         const val SCORE_FOR_REFRESH = 2
-        const val SCORE_KEY = "score"
+        const val SCORE_KEY = "SCORE"
     }
 }
