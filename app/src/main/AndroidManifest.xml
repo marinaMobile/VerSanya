@@ -27,6 +27,11 @@
             android:name=".GamefiAct"
             android:exported="false" />
         <activity
+            android:name=".GamefiActGameOver"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat"
+            />
+        <activity
             android:name=".FilerMeNow"
             android:exported="false" />
         <activity

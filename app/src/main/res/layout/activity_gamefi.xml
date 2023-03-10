@@ -4,7 +4,207 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/com_facebook_blue"
+    android:background="@drawable/back_vert"
     tools:context=".GamefiAct">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTop"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/latte"
+        app:layout_constraintBottom_toTopOf="@id/clBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHelper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="Try to find same candy."
+            android:textColor="@color/much_brown"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/cl_top_object_height"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:background="@drawable/frame_rounded"
+            android:padding="@dimen/padding_normal"
+            app:constraint_referenced_ids="tvTime, tvScore"
+            app:flow_horizontalGap="@dimen/flow_gap"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHelper" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_time_string"
+            android:textAlignment="center"
+            android:textColor="@color/latte"
+            android:textSize="@dimen/text_size_small"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_score_string"
+            android:textAlignment="center"
+            android:textColor="@color/latte"
+            android:textSize="@dimen/text_size_small"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSearchingFigure"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/cl_top_object_height"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:background="@drawable/frame_rounded"
+            android:padding="5dp"
+            android:src="@drawable/candy_one"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHelper" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnRefreshField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_sync_24"
+            android:layout_marginEnd="@dimen/margin_normal"
+            app:layout_constraintBottom_toBottomOf="@+id/ivSearchingFigure"
+            app:layout_constraintEnd_toStartOf="@+id/ivSearchingFigure"
+            app:layout_constraintTop_toTopOf="@+id/ivSearchingFigure" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clTop"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_normal"
+            app:constraint_referenced_ids="iv1Variant, iv2Variant, iv3Variant, iv4Variant, iv5Variant, iv6Variant, iv7Variant, iv8Variant, iv9Variant, iv10Variant, iv11Variant, iv12Variant, iv13Variant, iv14Variant, iv15Variant, iv16Variant"
+            app:flow_maxElementsWrap="4"
+            app:flow_wrapMode="aligned"
+            app:flow_horizontalGap="@dimen/flow_gap"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv1Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv2Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv3Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv4Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv5Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv6Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv7Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv8Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv9Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv10Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv11Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv12Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv13Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv14Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv15Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv16Variant"
+            android:layout_width="@dimen/variant_size"
+            android:layout_height="@dimen/variant_size"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
